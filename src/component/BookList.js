@@ -1,18 +1,6 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
-
-
-//create a query to featch data that query featch books query
-
-const getbookquery = gql`
-{
-  books{
-    name
-    id
-  }
-}
-
-`;
+import {getbookquery} from '../queries/query';
 
 
 
