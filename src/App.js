@@ -1,6 +1,6 @@
 import React from 'react';
 import BookList from './component/BookList'; //import component
-import { ApolloClient, InMemoryCache, ApolloProvider,gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 //create apollo client and its setup
 
@@ -9,24 +9,6 @@ const client = new ApolloClient({
   cache : new InMemoryCache()
 
 })
-
-//create a query to featch data
-
-const bookquery = client.query({
-  query : gql`
-  {
-    books{
-      name
-      id
-    }
-  }
-  
-  `
-
-})
-console.log(bookquery);
-
-
 
 function App() {
   return (
