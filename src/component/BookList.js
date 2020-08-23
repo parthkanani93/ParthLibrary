@@ -4,7 +4,7 @@ import { gql, useQuery } from '@apollo/client';
 
 //create a query to featch data that query featch books query
 
-const bookquery = gql`
+const getbookquery = gql`
 {
   books{
     name
@@ -15,16 +15,22 @@ const bookquery = gql`
 `;
 
 
+
 function BookList() {
-  const { loading, data } = useQuery(bookquery); //using usequryhooks we get loading and data from bookquery
+  const { loading, data } = useQuery(getbookquery); //using usequryhooks we get loading and data from bookquery
   if (loading) return <h2>Loading.....</h2>
 
   return (
-    <div id="main">
+    <div>
       <ul id="book-list" >
+        {/* render books data in this ul list using map */}
         {data.books.map((book) =>
 
-          <li key={book.id}>{book.name}</li>
+          <li key={book.id}>
+            {
+              book.name
+            }
+          </li>
         )}
 
 
