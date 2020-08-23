@@ -1,13 +1,30 @@
 import React from 'react';
 import BookList from './component/BookList'; //import component
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider,gql } from '@apollo/client';
 
-//create apollo client
+//create apollo client and its setup
 
 const client = new ApolloClient({
-  uri: "http://localhost:3003/graphql"
+  uri: "http://localhost:3003/graphql",
+  cache : new InMemoryCache()
 
 })
+
+//create a query to featch data
+
+const bookquery = client.query({
+  query : gql`
+  {
+    books{
+      name
+      id
+    }
+  }
+  
+  `
+
+})
+console.log(bookquery);
 
 
 
