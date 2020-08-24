@@ -41,10 +41,12 @@ query($id : ID!){
   book(id : $id){
     id
     name
+    genre
     author{
       name
       book{
         name
+        id
       }
     }
     

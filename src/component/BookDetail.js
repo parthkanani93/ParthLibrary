@@ -4,17 +4,28 @@ import { getbookdetails } from '../queries/query';
 
 
 function BookDetail({ bookid }) {
-  // const { loading, data } = useQuery(getbookdeatils); //using usequryhooks we get loading and data from bookquery
 
   const { data, loading } = useQuery(getbookdetails, { variables: { id: bookid } });
   if (loading) return <h2>Loading.....</h2>
-  console.log(data);
   return (
     <div id="book-details">
       <h2>Output Book Details here</h2>
-      <ul>
+  
+        {
+         data && <p>Book Name :- {data.book.name}</p>
+        }
+         {
+         data && <p>Book Genre :- {data.book.genre}</p>
+        }
+         {
+         data && <p>Book Author :- {data.book.author.name}</p>
+        }
+         <h3>All Book By This Author</h3>
+         {
+           data && <ul>{data.book.author.book.map((e)=><li key={e.id}>{e.name}</li>)}</ul>
+           
+         }
 
-      </ul>
     </div>
   );
 }
