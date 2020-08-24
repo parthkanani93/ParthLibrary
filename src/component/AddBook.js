@@ -1,6 +1,6 @@
 import React ,{useState} from 'react';
 import { useQuery , useMutation } from '@apollo/client';
-import {getauthorquery , addBookMutation } from '../queries/query';
+import {getauthorquery , addBookMutation, getbookquery } from '../queries/query';
 
 
 
@@ -27,7 +27,12 @@ function AddBook() {
                     authorId : authorname,
                     genre : genre
 
-                }
+                },
+                refetchQueries : [
+                    {
+                        query : getbookquery
+                    }
+                ]   //that parameter refeatch the getbookquery so we can dynamically show page to query is updated in db
             })
 
         }}>

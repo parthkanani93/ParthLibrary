@@ -34,6 +34,6 @@ mutation($name : String! , $genre : String! , $authorId : ID!){
   }
 }
 
-`
+`;
 
 export  {getauthorquery ,getbookquery,addBookMutation};
