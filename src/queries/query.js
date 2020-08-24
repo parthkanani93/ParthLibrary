@@ -24,5 +24,16 @@ const getbookquery = gql`
 }
 
 `;
+//mutaion in db to add a book
+const addBookMutation = gql`
+mutation($name : String! , $genre : String! , $authorId : ID!){
+  addBook( name : $name , genre : $genre ,authorId : $authorId ){
+    name
+    id
 
-export  {getauthorquery ,getbookquery};
+  }
+}
+
+`
+
+export  {getauthorquery ,getbookquery,addBookMutation};
