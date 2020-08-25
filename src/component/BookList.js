@@ -7,7 +7,7 @@ import BookDetail from './BookDetail';
 
 function BookList() {
   const { loading, data } = useQuery(getbookquery); //using usequryhooks we get loading and data from bookquery
-  const [selected , setselected] = useState(null);
+  const [selected , setselected] = useState("");
   if (loading) return <h2>Loading.....</h2>
 
   return (
