@@ -7,7 +7,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 //create apollo client and its setup
 
 const client = new ApolloClient({
-  uri: "http://localhost:3003/graphql",
+  uri: "https://stormy-bastion-14777.herokuapp.com/graphql",
   cache : new InMemoryCache()
 
 })
