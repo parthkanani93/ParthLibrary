@@ -18,7 +18,7 @@ function AddBook() {
     if (loading) return <h2>Loading.....</h2>
 
     return (
-        //whenever we submit the addbook mutation are occure and send the data in db
+
         <form id="add-book" onSubmit={(e)=> {
             e.preventDefault();
             addbook({
@@ -32,7 +32,7 @@ function AddBook() {
                     {
                         query : getbookquery
                     }
-                ]   //that parameter refeatch the getbookquery so we can dynamically show page to query is updated in db
+                ]  
             })
 
         }}>
@@ -48,7 +48,7 @@ function AddBook() {
                 <label>Author:</label>
                 <select onChange={(e)=>setauthorname(e.target.value)}>
                     <option>Select author</option>
-                    {/* add authors list in option from db */}
+                   
                     {data.authors.map((author) =>
                         <option key={author.id} value={author.id}>{author.name}</option>
 

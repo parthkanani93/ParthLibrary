@@ -13,7 +13,7 @@ function BookList() {
   return (
     <div>
       <ul id="book-list" >
-        {/* render books data in this ul list using map */}
+      
         {data.books.map((book) =>
 
           <li key={book.id} onClick={(e)=> setselected(book.id)}>
