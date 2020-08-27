@@ -15,6 +15,7 @@ Back-end
 
 	* Node-js
 	* Express-js
+	* Graph-ql
 	* Cors(package which connect graphql with nodejs)
 	* Mongoose(for easily communicate with Mongodb)
 Data-Base
