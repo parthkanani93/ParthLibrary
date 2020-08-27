@@ -7,9 +7,9 @@ import {getauthorquery , addBookMutation, getbookquery } from '../queries/query'
 
 function AddBook() {
     const { loading, data } = useQuery(getauthorquery); //using usequryhooks we get loading and data from bookquery
-    const [name ,setname] =useState("");
-    const [authorname ,setauthorname] =useState(""); 
-    const [genre ,setgenre] =useState("");
+    const [name ,setname] =useState();
+    const [authorname ,setauthorname] =useState(); 
+    const [genre ,setgenre] =useState();
 
     const [addbook] = useMutation(addBookMutation); //using usemutation we can mutation at frontend side and update db
     
