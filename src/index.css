@@ -92,3 +92,8 @@ form button{
   box-sizing: border-box;
   color: #fff;
 }
+#book-section{
+  display: flex;
+  align-content: center;
+}
+
